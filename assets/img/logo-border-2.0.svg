@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+    <circle cx="250" cy="250" r="246" stroke="white" stroke-width="8px" fill="none"/>
+
+    <!--边框-->
+    <circle cx="102" cy="177" r="60" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="162" cy="208" r="45" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="203" cy="227" r="30" stroke="white" stroke-width="8px" fill="none"/>
+
+    <circle cx="398" cy="320" r="60" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="338" cy="293" r="45" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="296" cy="273" r="30" stroke="white" stroke-width="8px" fill="none"/>
+
+    <circle cx="176" cy="396" r="60" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="205" cy="335" r="45" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="227" cy="293" r="30" stroke="white" stroke-width="8px" fill="none"/>
+
+    <circle cx="322" cy="104" r="60" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="293" cy="163" r="45" stroke="white" stroke-width="8px" fill="none"/>
+    <circle cx="272" cy="205" r="30" stroke="white" stroke-width="8px" fill="none"/>
+
+    <!--实体-->
+    <circle cx="102" cy="177" r="60" fill="#fd5955"/>
+    <circle cx="162" cy="208" r="45" fill="#fd5955"/>
+    <circle cx="203" cy="227" r="30" fill="#fd5955"/>
+
+    <circle cx="398" cy="320" r="60" fill="#05a38f"/>
+    <circle cx="338" cy="293" r="45" fill="#05a38f"/>
+    <circle cx="296" cy="273" r="30" fill="#05a38f"/>
+
+    <circle cx="176" cy="396" r="60" fill="#214d55"/>
+    <circle cx="205" cy="335" r="45" fill="#214d55"/>
+    <circle cx="227" cy="293" r="30" fill="#214d55"/>
+
+    <circle cx="322" cy="104" r="60" fill="#f7b560"/>
+    <circle cx="293" cy="163" r="45" fill="#f7b560"/>
+    <circle cx="272" cy="205" r="30" fill="#f7b560"/>
+
+</svg>

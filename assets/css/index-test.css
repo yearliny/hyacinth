@@ -1,15 +1,17 @@
 /* 全局属性设定 */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
     background-color: #f6f6f6;
+    color: #1a1a1a;
+    font-size: 15px;
 }
 
 a {
-    color: black;
+    color: #36464e;
 }
 
 a:hover {
-    color: black;
+    color: #8590a6;
 }
 
 /* 至上而下的 CSS 样式排序*/
@@ -161,33 +163,34 @@ header.masthead .site-heading .subheading {
     font-weight: lighter;
 }
 
+/*.post-border {*/
+/*padding-left: 0;*/
+/*border-left-style: solid;*/
+/*border-left-width: 5px;*/
+/*border-color: #4285f4;*/
+/*}*/
+
 .post, .widget {
     background-color: white;
-    margin: 0 0 20px;
-    padding: 20px 20px 5px;
+    margin: 0 0 30px;
+    padding: 20px 20px 15px;
     border-radius: 0;
     border: none;
-    box-shadow: 0 6px 15px rgba(36,37,38,0.08);
+    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
     transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.post:hover {
-    box-shadow: 5px 12px 20px rgba(36,37,38,0.13);
-    cursor: pointer;
-}
-
-.post-title {
-    padding-bottom: 5px;
-    font-size: 18px;
+.post-title > a {
     font-weight: 600;
+    font-size: 19px;
+    line-height: 1.6;
+    font-synthesis: style;
+    /*color: #007bff;*/
 }
 
 .post-title > a:hover {
-    box-shadow:none !important;
-}
-
-section.widget {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    box-shadow: none !important;
+    color: #175199;
 }
 
 section#search.widget {
