@@ -10,8 +10,9 @@
 
     <link rel="icon" href="assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/index-test.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/icon/logo-2_0-144x144.png">
@@ -24,6 +25,7 @@
     <!-- basic favicon 32x32-->
     <link rel="shortcut icon" href="assets/img/icon/logo-2_0-32x32.png">
 </head>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow" id="site-navigation">
     <div class="container">
@@ -43,7 +45,7 @@
 </nav>
 <header class="masthead shadow-sm" style="background-image: url(assets/img/home-bg.jpg)">
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
@@ -57,30 +59,33 @@
 <div class="container" id="main">
     <div class="row">
         <div class="col-lg-8">
+
             <article class="post" onclick="location.href='https://yuan.ga'">
                 <h2 class="post-title"><a href="#" rel="bookmark">使用Win10内置SSH客户端</a></h2>
                 <p>现在才知道，在 Windows 10 April 2018 Update 更新后，SSH-Client 已经默认是操作系统的内置功能了，所以无需其他配置就可以直接使用 ssh、scp
                     等命令，对于开发者来说是一件不错的事情，毕竟在弱需求的情况下，可以替代 Xshell 等客户端了。</p>
+                <button class="btn btn-sm btn-tag" href="#">Health</button>
+                <button class="btn btn-sm btn-tag" href="#">Computer</button>
+                <button class="btn btn-sm btn-tag" href="#">Easy</button>
+                <button class="btn btn-sm btn-link float-right" href="#">More</button>
             </article>
             <article class="post" onclick="location.href='https://yuan.ga'">
                 <h2 class="post-title"><a href="#" rel="bookmark">使用Win10内置SSH客户端</a></h2>
                 <p>现在才知道，在 Windows 10 April 2018 Update 更新后，SSH-Client 已经默认是操作系统的内置功能了，所以无需其他配置就可以直接使用 ssh、scp
                     等命令，对于开发者来说是一件不错的事情，毕竟在弱需求的情况下，可以替代 Xshell 等客户端了。</p>
+                <button class="btn btn-sm btn-tag" href="#">Health</button>
+                <button class="btn btn-sm btn-tag" href="#">Computer</button>
+                <button class="btn btn-sm btn-tag" href="#">Easy</button>
+                <button class="btn btn-sm btn-primary float-right" href="#">More</button>
             </article>
             <article class="post" onclick="location.href='https://yuan.ga'">
                 <h2 class="post-title"><a href="#" rel="bookmark">使用Win10内置SSH客户端</a></h2>
                 <p>现在才知道，在 Windows 10 April 2018 Update 更新后，SSH-Client 已经默认是操作系统的内置功能了，所以无需其他配置就可以直接使用 ssh、scp
                     等命令，对于开发者来说是一件不错的事情，毕竟在弱需求的情况下，可以替代 Xshell 等客户端了。</p>
-            </article>
-            <article class="post" onclick="location.href='https://yuan.ga'">
-                <h2 class="post-title"><a href="#" rel="bookmark">使用Win10内置SSH客户端</a></h2>
-                <p>现在才知道，在 Windows 10 April 2018 Update 更新后，SSH-Client 已经默认是操作系统的内置功能了，所以无需其他配置就可以直接使用 ssh、scp
-                    等命令，对于开发者来说是一件不错的事情，毕竟在弱需求的情况下，可以替代 Xshell 等客户端了。</p>
-            </article>
-            <article class="post" onclick="location.href='https://yuan.ga'">
-                <h2 class="post-title"><a href="#" rel="bookmark">使用Win10内置SSH客户端</a></h2>
-                <p>现在才知道，在 Windows 10 April 2018 Update 更新后，SSH-Client 已经默认是操作系统的内置功能了，所以无需其他配置就可以直接使用 ssh、scp
-                    等命令，对于开发者来说是一件不错的事情，毕竟在弱需求的情况下，可以替代 Xshell 等客户端了。</p>
+                <button class="btn btn-sm btn-tag" href="#">Health</button>
+                <button class="btn btn-sm btn-tag" href="#">Computer</button>
+                <button class="btn btn-sm btn-tag" href="#">Easy</button>
+                <button class="btn btn-sm btn-primary float-right" href="#">More</button>
             </article>
 
         </div>
@@ -90,7 +95,8 @@
                     <input type="text" class="form-control btn-light btn-search" id="search-field"
                            placeholder="Search..." aria-label="Search">
                     <div class="input-group-append">
-                        <button class="btn btn-light btn-search" type="button"><i class="fa fa-search text-primary"></i></button>
+                        <button class="btn btn-light btn-search" type="button"><i class="fa fa-search text-primary"></i>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -154,26 +160,26 @@
                 <ul class="text-center list-inline">
                     <li class="list-inline-item">
                         <a href="#">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
+                          <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                          </span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="#">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
+                          <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                          </span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="#">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                            </span>
+                          <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                          </span>
                         </a>
                     </li>
                 </ul>

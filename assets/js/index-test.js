@@ -1,4 +1,5 @@
-function auto_navbar() {
+// auto hide navbar
+(function () {
     const MQL = 992;
     if (screen.width > MQL) {
         let header = document.getElementById("site-navigation");
@@ -23,16 +24,4 @@ function auto_navbar() {
             previousTop = currentTop;
         }
     }
-}
-
-let el = document.getElementById("search-field");
-
-el.onfocus = function () {
-    let search_bar = document.getElementById("search");
-    search_bar.classList.add("focus-shadow");
-};
-el.onfocusout = function () {
-    let search_bar = document.getElementById("search");
-    search_bar.classList.remove("focus-shadow");
-};
-auto_navbar();
+})();

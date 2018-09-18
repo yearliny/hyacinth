@@ -1,140 +1,116 @@
-.section-heading {
-    font-size: 36px;
-    font-weight: 700;
-    margin-top: 60px;
+/* 全局属性设定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    background-color: #f6f6f6;
+    color: #1a1a1a;
+    font-size: 15px;
 }
 
-.caption {
-    font-size: 14px;
-    font-style: italic;
-    display: block;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+a {
+    color: #36464e;
 }
 
-::-moz-selection {
-    color: #fff;
-    background: #0085A1;
-    text-shadow: none;
+a:hover {
+    color: #8590a6;
 }
 
-::selection {
-    color: #fff;
-    background: #0085A1;
-    text-shadow: none;
+/* 至上而下的 CSS 样式排序*/
+#main .post a:hover, section.widget a:hover {
+    color: #333333;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+    transition: 0.2s;
+    text-decoration: none;
 }
 
-img::selection {
-    color: #fff;
-    background: transparent;
-}
-
-img::-moz-selection {
-    color: #fff;
-    background: transparent;
-}
-
-#mainNav {
+/*Navbar 静态样式*/
+#site-navigation {
     position: absolute;
     border-bottom: 1px solid #e9ecef;
     background-color: white;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#mainNav .navbar-brand {
-    font-weight: 800;
-    color: #343a40;
+.navbar-light .navbar-brand {
+    color: #000000;
 }
 
-#mainNav .navbar-toggler {
-    font-size: 12px;
-    font-weight: 800;
-    padding: 14px;
-    text-transform: uppercase;
-    color: #343a40;
+.navbar-light .navbar-nav .nav-link:hover {
+    opacity: 0.7;
+    transition: 0.1s;
 }
-/*Navbar 的标签字体、间距、加粗，以及全部大写*/
-#mainNav .navbar-nav > li.nav-item > a {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: rgba(0, 0, 0, .9);
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #646464;
+    font-size: small;
+    font-weight: bold;
+    font-family: "Microsoft YaHei UI Light", Arial, serif;
+}
+
+ul.navbar-nav, a.navbar-brand {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 /*屏幕宽度大于 992px 像素时进行的操作*/
 /*Navbar透明，字体全部变成白色*/
 @media only screen and (min-width: 992px) {
-    #mainNav {
+    #site-navigation {
         border-bottom: 1px solid transparent !important;
         background: transparent;
     }
 
-    #mainNav .navbar-brand {
+    #site-navigation .navbar-brand {
         padding: 10px 20px;
         color: #fff;
     }
 
-    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-        color: rgba(255, 255, 255, 0.8);
+    #site-navigation .navbar-brand:focus, #site-navigation .navbar-brand:hover {
+        color: rgba(255, 255, 255, 0.9);
     }
 
-    #mainNav .navbar-nav > li.nav-item > a {
-        padding: 10px 20px;
+    #site-navigation .navbar-nav > li.nav-item > a {
         color: #fff;
+        padding: 10px 0 10px;
+        margin: 0 20px;
     }
 
-    #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-        color: rgba(255, 255, 255, 0.8);
+    #site-navigation > ul.navbar-nav > li.nav-item > a:focus, #site-navigation ul.navbar-nav > li.nav-item > a:hover {
+        opacity: 0.7;
     }
 }
-/*屏幕宽度大于 992px 像素时进行的操作：主要涉及动画方面*/
-/*背景色的变化是渐变的，*/
-@media only screen and (min-width: 992px) {
-    #mainNav {
-        -webkit-transition: background-color 0.2s;
-        -moz-transition: background-color 0.2s;
-        transition: background-color 0.2s;
-        /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-        -o-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
-    }
 
-    #mainNav.is-fixed {
+/* 实现向下滚动隐藏导航，向上滚动时，如果当前高度低于header高度，那么继续显示顶部导航栏，如果高度高于header，则显示原有效果*/
+@media only screen and (min-width: 992px) {
+    /* -67px 是 navbar 的高度，-67相当于向上正好移动出视野区*/
+    #site-navigation.is-fixed {
         /* when the user scrolls down, we hide the header right above the viewport */
         position: fixed;
         top: -67px;
-        -webkit-transition: -webkit-transform 0.2s;
-        -moz-transition: -moz-transform 0.2s;
         transition: transform 0.2s;
         border-bottom: 1px solid white;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
     }
 
-    #mainNav.is-fixed .navbar-brand {
+    #site-navigation.is-fixed .navbar-brand {
         color: #212529;
     }
 
-    #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-        color: #0085A1;
-    }
-
-    #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+    #site-navigation.is-fixed .navbar-nav > li.nav-item > a {
         color: #212529;
     }
 
-    #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-        color: #0085A1;
+    #navbarToggler > ul > li > a:hover {
+        color: #212529;
     }
 
-    #mainNav.is-visible {
+    /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
+    因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
+    #site-navigation.is-visible {
         /* if the user changes the scrolling direction, we show the header */
-        top: 0;
         -webkit-transform: translate3d(0, 100%, 0);
         -moz-transform: translate3d(0, 100%, 0);
         -ms-transform: translate3d(0, 100%, 0);
@@ -151,8 +127,11 @@ header.masthead {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    width: 100%;
+    height: 520px;
 }
 
+/* header 黑色遮罩 */
 header.masthead .overlay {
     position: absolute;
     top: 0;
@@ -163,201 +142,103 @@ header.masthead .overlay {
     opacity: 0.5;
 }
 
-header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-    padding: 200px 0 150px;
     color: white;
+    text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-    header.masthead .page-heading,
-    header.masthead .post-heading,
-    header.masthead .site-heading {
-        padding: 200px 0;
-    }
-}
-
-header.masthead .page-heading,
 header.masthead .site-heading {
-    text-align: center;
+    padding-top: 200px;
 }
 
-header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
-    font-size: 50px;
-    margin-top: 0;
+    font-weight: bolder;
 }
 
-header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1.1;
     display: block;
-    margin: 10px 0 0;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-@media only screen and (min-width: 768px) {
-    header.masthead .page-heading h1,
-    header.masthead .site-heading h1 {
-        font-size: 80px;
-    }
-}
-
-header.masthead .post-heading h1 {
-    font-size: 35px;
-}
-
-header.masthead .post-heading .meta,
-header.masthead .post-heading .subheading {
-    line-height: 1.1;
-    display: block;
-}
-
-header.masthead .post-heading .subheading {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 10px 0 30px;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-header.masthead .post-heading .meta {
+    padding-top: 30px;
     font-size: 20px;
-    font-weight: 300;
-    font-style: italic;
-    font-family: 'Lora', 'Times New Roman', serif;
+    font-weight: lighter;
 }
 
-header.masthead .post-heading .meta a {
-    color: #fff;
-}
+/*.post-border {*/
+/*padding-left: 0;*/
+/*border-left-style: solid;*/
+/*border-left-width: 5px;*/
+/*border-color: #4285f4;*/
+/*}*/
 
-@media only screen and (min-width: 768px) {
-    header.masthead .post-heading h1 {
-        font-size: 55px;
-    }
-
-    header.masthead .post-heading .subheading {
-        font-size: 30px;
-    }
-}
-
-.post-preview > a {
-    color: #212529;
-}
-
-.post-preview > a:focus, .post-preview > a:hover {
-    text-decoration: none;
-    color: #0085A1;
-}
-
-.post-preview > a > .post-title {
-    font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.post-preview > a > .post-subtitle {
-    font-weight: 300;
-    margin: 0 0 10px;
-}
-
-.post-preview > .post-meta {
-    font-size: 18px;
-    font-style: italic;
-    margin-top: 0;
-    color: #868e96;
-}
-
-.post-preview > .post-meta > a {
-    text-decoration: none;
-    color: #212529;
-}
-
-.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
-    text-decoration: underline;
-    color: #0085A1;
-}
-
-@media only screen and (min-width: 768px) {
-    .post-preview > a > .post-title {
-        font-size: 36px;
-    }
-}
-
-.floating-label-form-group {
-    font-size: 14px;
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.floating-label-form-group input,
-.floating-label-form-group textarea {
-    font-size: 1.5em;
-    position: relative;
-    z-index: 1;
-    padding: 0;
-    resize: none;
-    border: none;
+.post, .widget {
+    background-color: white;
+    margin: 0 0 30px;
+    padding: 20px 20px 15px;
     border-radius: 0;
-    background: none;
+    border: none;
+    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.post-title > a {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.6;
+    font-synthesis: style;
+    /*color: #007bff;*/
+}
+
+.post-title > a:hover {
     box-shadow: none !important;
-    font-family: 'Lora', 'Times New Roman', serif;
+    color: #175199;
 }
 
-.floating-label-form-group input::-webkit-input-placeholder,
-.floating-label-form-group textarea::-webkit-input-placeholder {
-    color: #868e96;
-    font-family: 'Lora', 'Times New Roman', serif;
-}
-
-.floating-label-form-group label {
-    font-size: 0.85em;
-    line-height: 1.764705882em;
-    position: relative;
-    z-index: 0;
-    top: 2em;
-    display: block;
-    margin: 0;
-    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-    -moz-transition: top 0.3s ease, opacity 0.3s ease;
-    -ms-transition: top 0.3s ease, opacity 0.3s ease;
-    transition: top 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-}
-
-.floating-label-form-group .help-block {
-    margin: 15px 0;
-}
-
-.floating-label-form-group-with-value label {
-    top: 0;
-    opacity: 1;
-}
-
-.floating-label-form-group-with-focus label {
-    color: #0085A1;
-}
-
-form .form-group:first-child .floating-label-form-group {
-    border-top: 1px solid #dee2e6;
-}
-
-footer {
-    padding: 50px 0 65px;
-}
-
-footer .list-inline {
-    margin: 0;
+section#search.widget {
     padding: 0;
 }
 
-footer .copyright {
-    font-size: 14px;
-    margin-bottom: 0;
-    text-align: center;
+.widget ul li, .widget ol li {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 0.5em 0;
+    margin-bottom: -1px;
+    font-size: small;
+    color: #000;
+}
+
+.widget ul, .widget ol {
+    padding-left: 0;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0;
+    padding-bottom: 8px;
+}
+
+footer > div.foot-main {
+    position: absolute;
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #e5eff5;
+}
+
+.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
+    background: #fff;
+    border: none transparent;
+    box-shadow: none;
+}
+
+aside section {
+    background-color: white;
+}
+
+.btn-tag {
+    color: #656464;
 }
