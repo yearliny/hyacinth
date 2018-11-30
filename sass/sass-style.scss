@@ -1,0 +1,312 @@
+a {
+  color: #222;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} > a {
+    color: #333;
+    //font-weight: bold;
+    font-family: "Microsoft YaHei UI Light", Arial, serif;
+  }
+}
+
+/* Link 悬浮样式 */
+#main .post a:hover, section.widget a:hover {
+  color: #333333;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.btn-pager {
+  color: #4dabf7;
+  background-color: white;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 1rem;
+  font-family: fa5-proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  transition: all .1s ease-in;
+}
+
+.btn-tag, .btn-more {
+  border-radius: 1rem;
+  font-family: fa5-proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: all .1s ease-in;
+}
+
+.btn-tag:hover, .btn-tag:focus {
+  background-color: #d0ebff;
+  color: #228be6;
+  transition: all .1s ease-in;
+}
+
+.btn-tag {
+  color: #adb5bd;
+  background-color: #f1f3f5;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.btn-more {
+  color: #4dabf7;
+  background-color: #f8f9fa;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.btn-more:hover, .btn-more:focus {
+  color: #228be6;
+  background-color: #d0ebff;
+  transition: all .1s ease-in;
+  animation: colorCycle infinite 4s ease-in-out;
+}
+
+/*--------------------------------------------------------------
+13.0 Layout
+--------------------------------------------------------------*/
+/* Navbar 静态样式 */
+#site-navigation {
+  position: absolute;
+  background-color: white;
+}
+
+.navbar-light .navbar-brand {
+  color: #000000;
+}
+
+ul.navbar-nav, a.navbar-brand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#site-navigation ul.navbar-nav li.nav-item > a {
+  opacity: .7;
+  font-size: small;
+  font-weight: bold;
+  font-family: "Microsoft YaHei UI Light", Arial, serif;
+}
+
+#site-navigation ul.navbar-nav li.nav-item > a:focus, #site-navigation ul.navbar-nav li.nav-item > a:hover, #site-navigation ul.navbar-nav li.nav-item > a.active {
+  opacity: 1;
+}
+
+/* 屏幕宽度大于 992px 像素，窗口位于顶端的样式 */
+/* Navbar 透明，字体全部变成白色 */
+@media only screen and (min-width: 992px) {
+  #site-navigation {
+    background: transparent;
+  }
+
+  #site-navigation .navbar-brand {
+    padding: 10px 20px;
+    color: #fff;
+  }
+
+  #site-navigation .navbar-nav > li.nav-item > a {
+    color: #fff;
+    padding: 10px 0 10px;
+    margin: 0 20px;
+  }
+
+  #site-navigation.is-fixed .navbar-nav > li.nav-item > a {
+    color: #212529;
+  }
+
+  /* 实现向下滚动隐藏导航
+  向上滚动时，如果当前高度低于header高度，那么继续显示顶部导航栏，如果高度高于header，则显示原有效果
+  69.2px 是 navbar 的高度，-69.2 相当于向上正好移动出视野区 */
+  #site-navigation.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -69.2px;
+    transition: transform 0.2s;
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  #site-navigation.is-fixed.post-progress {
+    top: -68.2px;
+  }
+
+  #site-navigation.is-fixed .navbar-brand {
+    color: #495057;
+  }
+
+  #navbarToggler > ul > li > a:hover, #navbarToggler > ul > li > a.active {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+  }
+
+  /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
+  因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
+  #site-navigation.is-visible {
+    transform: translate3d(0, 100%, 0);
+    animation-iteration-count: 1;
+  }
+}
+
+header.masthead {
+  margin-bottom: 50px;
+  background: #868e96 no-repeat scroll center center;
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 520px;
+}
+
+/* header 黑色遮罩 */
+header.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.masthead .post-heading,
+header.masthead .site-heading {
+  color: white;
+  text-align: center;
+}
+
+header.masthead .site-heading {
+  padding-top: 200px;
+}
+
+header.masthead .site-heading h1 {
+  font-weight: bolder;
+}
+
+header.masthead .site-heading .subheading {
+  display: block;
+  padding-top: 30px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.post, .widget {
+  background-color: white;
+  margin: 0 0 30px;
+  padding: 20px 20px 15px;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.widget {
+  opacity: .85;
+}
+
+.post-title > a {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.6;
+  font-synthesis: style;
+}
+
+.post-title > a:hover {
+  box-shadow: none !important;
+  color: #175199;
+}
+
+section#search.widget {
+  padding: 0;
+}
+
+.widget ul li, .widget ol li {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 0.5em 0;
+  margin-bottom: -1px;
+  font-size: small;
+  color: #000;
+}
+
+.widget ul, .widget ol {
+  padding-left: 0;
+}
+
+.widget ul {
+  list-style: none;
+}
+
+.widget-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  padding-bottom: 8px;
+}
+
+footer > div.foot-main {
+  position: absolute;
+  background-color: white;
+  padding: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #e5eff5;
+}
+
+.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
+  background: #fff;
+  border: none transparent;
+  box-shadow: none;
+}
+
+aside section {
+  background-color: white;
+}
+
+.focus-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/*--------------------------------------------------------------
+Color
+--------------------------------------------------------------*/
+.gray7 {
+  color: #495057;
+}
+
+.bg-gray0 {
+  background-color: #f8f9fa;
+}
+
+/*--------------------------------------------------------------
+ animation
+--------------------------------------------------------------*/
+@keyframes colorCycle {
+  0% {
+    color: #228be6;
+  }
+  12.5% {
+    color: #12b886;
+  }
+  25% {
+    color: #40c057;
+  }
+  37.5% {
+    color: #ffd43b;
+  }
+  50% {
+    color: #fd7e14;
+  }
+  62.5% {
+    color: #fa5252;
+  }
+  75% {
+    color: #f783ac;
+  }
+  87.5% {
+    color: #7950f2;
+  }
+  100% {
+    color: #228be6;
+  }
+}
