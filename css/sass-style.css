@@ -1,71 +1,49 @@
 @charset "UTF-8";
+.navbar-light .navbar-toggler {
+  border-color: white;
+}
+
 a {
-  color: #222;
+  color: #1a73e8;
+}
+a::visited {
+  color: #7759ae;
 }
 
-h1 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
+.post, .widget {
+  background-color: #fff;
+  margin: 0 0 2rem;
+  padding: 20px 20px 15px;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.1);
 }
 
-h2 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
+.post .post-title a {
+  color: #343a40;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  transition: color 0.2s ease;
 }
-
-h3 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
-}
-
-h4 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
-}
-
-h5 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
-}
-
-h6 > a {
-  color: #333;
-  font-family: "Microsoft YaHei UI Light", Arial, serif;
-}
-
-/* Link 悬浮样式 */
-#main .post a:hover, section.widget a:hover {
-  color: #333333;
-  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 black;
-  transition: 0.2s;
+.post .post-title a:hover {
+  font-weight: 500;
+  color: #406599;
   text-decoration: none;
-}
-
-.btn-pager {
-  color: #4dabf7;
-  background-color: white;
-  padding-left: 18px;
-  padding-right: 18px;
-  border-radius: 1rem;
-  font-family: fa5-proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  transition: all 0.1s ease-in;
 }
 
 .btn-tag, .btn-more {
   border-radius: 1rem;
-  font-family: fa5-proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   transition: all 0.1s ease-in;
 }
-
-.btn-tag:hover, .btn-tag:focus {
+.btn-tag:hover, .btn-tag:focus, .btn-more:hover, .btn-more:focus {
   background-color: #d0ebff;
   color: #228be6;
   transition: all 0.1s ease-in;
 }
 
 .btn-tag {
-  color: #adb5bd;
+  color: #484c55bd;
   background-color: #f1f3f5;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
@@ -81,7 +59,6 @@ h6 > a {
   font-size: 0.875rem;
   font-weight: 600;
 }
-
 .btn-more:hover, .btn-more:focus {
   color: #228be6;
   background-color: #d0ebff;
@@ -89,89 +66,68 @@ h6 > a {
   animation: colorCycle infinite 4s ease-in-out;
 }
 
-/*--------------------------------------------------------------
-13.0 Layout
---------------------------------------------------------------*/
-/* Navbar 静态样式 */
+.btn-pager {
+  color: #4dabf7;
+  background-color: #fff;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: all 0.1s ease-in;
+}
+
 #site-navigation {
   position: absolute;
-  background-color: white;
+  background-color: #fff;
 }
-
-.navbar-light .navbar-brand {
-  color: #000000;
-}
-
-ul.navbar-nav, a.navbar-brand {
+#site-navigation a.navbar-brand {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
 }
-
 #site-navigation ul.navbar-nav li.nav-item > a {
   opacity: 0.7;
-  font-size: small;
-  font-weight: bold;
+  color: #212529;
+  font-weight: 500;
   font-family: "Microsoft YaHei UI Light", Arial, serif;
+  transition: opacity 0.2s ease;
 }
-
 #site-navigation ul.navbar-nav li.nav-item > a:focus, #site-navigation ul.navbar-nav li.nav-item > a:hover, #site-navigation ul.navbar-nav li.nav-item > a.active {
   opacity: 1;
+  font-weight: 600;
 }
-
-/* 屏幕宽度大于 992px 像素，窗口位于顶端的样式 */
-/* Navbar 透明，字体全部变成白色 */
-@media only screen and (min-width: 992px) {
+@media screen and (min-width: 992px) {
   #site-navigation {
     background: transparent;
   }
-
   #site-navigation .navbar-brand {
-    padding: 10px 20px;
     color: #fff;
+    padding: 10px 20px;
   }
-
-  #site-navigation .navbar-nav > li.nav-item > a {
+  #site-navigation ul.navbar-nav > li.nav-item > a {
     color: #fff;
     padding: 10px 0 10px;
     margin: 0 20px;
   }
-
-  #site-navigation.is-fixed .navbar-nav > li.nav-item > a {
+  #site-navigation.is-fixed {
+    /* 当用户下滑超过 header，我们隐藏导航栏，并修改它的样式为白底黑字 */
+    top: -69.2px;
+    position: fixed;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: transform 0.2s;
+  }
+  #site-navigation.is-fixed .navbar-brand,
+#site-navigation.is-fixed .navbar-nav > li.nav-item > a {
     color: #212529;
   }
-
-  /* 实现向下滚动隐藏导航
-  向上滚动时，如果当前高度低于header高度，那么继续显示顶部导航栏，如果高度高于header，则显示原有效果
-  69.2px 是 navbar 的高度，-69.2 相当于向上正好移动出视野区 */
-  #site-navigation.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -69.2px;
-    transition: transform 0.2s;
-    border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
-
-  #site-navigation.is-fixed.post-progress {
-    top: -68.2px;
-  }
-
-  #site-navigation.is-fixed .navbar-brand {
-    color: #495057;
-  }
-
-  #navbarToggler > ul > li > a:hover, #navbarToggler > ul > li > a.active {
-    opacity: 1;
-    transition: opacity 0.15s ease-in;
-  }
-
-  /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
-  因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
   #site-navigation.is-visible {
+    /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
+    因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
     transform: translate3d(0, 100%, 0);
     animation-iteration-count: 1;
   }
 }
+
 header.masthead {
   margin-bottom: 50px;
   background: #868e96 no-repeat scroll center center;
@@ -180,8 +136,6 @@ header.masthead {
   width: 100%;
   height: 520px;
 }
-
-/* header 黑色遮罩 */
 header.masthead .overlay {
   position: absolute;
   top: 0;
@@ -191,21 +145,17 @@ header.masthead .overlay {
   background-color: #212529;
   opacity: 0.5;
 }
-
 header.masthead .post-heading,
 header.masthead .site-heading {
-  color: white;
+  color: #fff;
   text-align: center;
 }
-
 header.masthead .site-heading {
   padding-top: 200px;
 }
-
 header.masthead .site-heading h1 {
   font-weight: bolder;
 }
-
 header.masthead .site-heading .subheading {
   display: block;
   padding-top: 30px;
@@ -213,66 +163,45 @@ header.masthead .site-heading .subheading {
   font-weight: lighter;
 }
 
-.post, .widget {
-  background-color: white;
-  margin: 0 0 30px;
-  padding: 20px 20px 15px;
-  border-radius: 0;
-  border: none;
-  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+.shadow-hover:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
 }
 
 .widget {
   opacity: 0.85;
+  border-top: 2px solid #007bff;
+  background-color: #fcfcfc;
 }
-
-.post-title > a {
+.widget .widget-title {
+  color: #006fe6;
   font-weight: 600;
-  font-size: 19px;
-  line-height: 1.6;
-  font-synthesis: style;
-}
-
-.post-title > a:hover {
-  box-shadow: none !important;
-  color: #175199;
-}
-
-section#search.widget {
-  padding: 0;
-}
-
-.widget ul li, .widget ol li {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-  padding: 0.5em 0;
-  margin-bottom: -1px;
-  font-size: small;
-  color: #000;
-}
-
-.widget ul, .widget ol {
-  padding-left: 0;
-}
-
-.widget ul {
-  list-style: none;
-}
-
-.widget-title {
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0;
   padding-bottom: 8px;
 }
+.widget ul {
+  padding-left: 0;
+  list-style: none;
+}
+.widget ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+  margin-bottom: -1px;
+  font-size: small;
+}
+.widget ul li a {
+  color: #222;
+  transition: color 0.2s ease;
+}
+.widget ul li a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
 
-footer > div.foot-main {
-  position: absolute;
-  background-color: white;
-  padding: 30px;
-  margin-top: 30px;
-  border-top: 1px solid #e5eff5;
+section#search {
+  padding: 0;
+  border-top: none;
 }
 
 .btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
@@ -282,15 +211,11 @@ footer > div.foot-main {
 }
 
 aside section {
-  background-color: white;
-}
-
-.focus-shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #fff;
 }
 
 /*--------------------------------------------------------------
-Color
+Utils
 --------------------------------------------------------------*/
 .gray7 {
   color: #495057;
@@ -298,6 +223,10 @@ Color
 
 .bg-gray0 {
   background-color: #f8f9fa;
+}
+
+.focus-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 /*--------------------------------------------------------------
@@ -331,6 +260,20 @@ Color
   100% {
     color: #228be6;
   }
+}
+.foot-main {
+  position: absolute;
+  background-color: #fff;
+  padding: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #e5eff5;
+}
+.foot-main a {
+  color: #495057;
+  transition: color 0.2s ease;
+}
+.foot-main a:hover {
+  color: #212529;
 }
 
 /*# sourceMappingURL=sass-style.css.map */

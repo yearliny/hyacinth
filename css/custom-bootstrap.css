@@ -8614,4 +8614,9 @@ h3 {
   border: none;
 }
 
+.float-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*# sourceMappingURL=custom-bootstrap.css.map */
