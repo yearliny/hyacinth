@@ -29,7 +29,7 @@ a {
 
 .post {
   .post-title a {
-    color: $gray-800;
+    color: $gray-900;
     font-weight: 400;
     font-size: 19px;
     line-height: 1.6;
@@ -252,11 +252,11 @@ aside section {
 Utils
 --------------------------------------------------------------*/
 .gray7 {
-  color: #495057;
+  color: $gray-700;
 }
 
 .bg-gray0 {
-  background-color: $gray-100;
+  background-color: darken($color: $gray-100, $amount: 2%);
 }
 
 .focus-shadow {

@@ -20,7 +20,7 @@ a::visited {
 }
 
 .post .post-title a {
-  color: #343a40;
+  color: #212529;
   font-weight: 400;
   font-size: 19px;
   line-height: 1.6;
@@ -222,7 +222,7 @@ Utils
 }
 
 .bg-gray0 {
-  background-color: #f8f9fa;
+  background-color: #f2f4f6;
 }
 
 .focus-shadow {
