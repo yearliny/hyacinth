@@ -1,0 +1,24 @@
+.post, .widget {
+  background-color: $white;
+  margin: 0 0 2rem;
+  padding: 20px 20px 15px;
+  border-radius: 0;
+  border: none;
+  box-shadow: $common-shadow;
+}
+
+.post {
+  .post-title a {
+    color: $gray-900;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.6;
+    transition: color .2s ease;
+
+    &:hover {
+      font-weight: 500;
+      color: #406599;
+      text-decoration: none;
+    }
+  }
+}

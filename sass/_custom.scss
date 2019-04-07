@@ -7,18 +7,8 @@
   border: none;
 }
 
-.float-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// custom veriables
-$common-shadow: 0 6px 15px rgba(36, 37, 38, 0.1);
-$focus-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-
-// custom bootstrap
 .navbar-light .navbar-toggler {
-  border-color: white;
+  border: none;
 }
 
 // Global style
@@ -30,239 +20,15 @@ a {
   }
 }
 
-.post, .widget {
-  background-color: $white;
-  margin: 0 0 2rem;
-  padding: 20px 20px 15px;
-  border-radius: 0;
-  border: none;
-  box-shadow: $common-shadow;
+.float-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.post {
-  .post-title a {
-    color: $gray-900;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 1.6;
-    transition: color .2s ease;
+// custom variables
+$common-shadow: 0 6px 15px rgba(36, 37, 38, 0.1);
+$focus-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
-    &:hover {
-      font-weight: 500;
-      color: #406599;
-      text-decoration: none;
-    }
-  }
-}
-
-.btn-tag, .btn-more {
-  border-radius: 1rem;
-  transition: all .1s ease-in;
-
-  &:hover, &:focus {
-    background-color: #d0ebff;
-    color: #228be6;
-    transition: all .1s ease-in;
-  }
-}
-
-.btn-tag {
-  color: #484c55bd;
-  background-color: #f1f3f5;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-.btn-more {
-  color: #4dabf7;
-  background-color: #f8f9fa;
-  padding-left: 18px;
-  padding-right: 18px;
-  font-size: 0.875rem;
-  font-weight: 600;
-
-  &:hover, &:focus {
-    color: #228be6;
-    background-color: #d0ebff;
-    transition: all .1s ease-in;
-    animation: colorCycle infinite 4s ease-in-out;
-  }
-}
-
-.btn-pager {
-  color: #4dabf7;
-  background-color: $white;
-  padding-left: 18px;
-  padding-right: 18px;
-  border-radius: 1rem;
-  font-weight: 600;
-  transition: all .1s ease-in;
-}
-
-#site-navigation {
-  position: absolute;
-  background-color: $white;
-
-  a.navbar-brand {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  ul.navbar-nav li.nav-item > a {
-    opacity: .7;
-    color: $gray-900;
-    font-weight: 500;
-    font-family: "Microsoft YaHei UI Light", Arial, serif;
-    transition: opacity .2s ease;
-
-    &:focus, &:hover, &.active {
-      opacity: 1;
-      font-weight: 600;
-    }
-  }
-
-  @media screen and (min-width: map-get($map: $grid-breakpoints, $key: lg)) {
-    // 桌面端的显示效果
-    background: transparent;
-
-    .navbar-brand {
-      color: $white;
-      padding: 10px 20px;
-    }
-
-    ul.navbar-nav > li.nav-item > a {
-      color: $white;
-      padding: 10px 0 10px;
-      margin: 0 20px;
-    }
-
-    &.is-fixed {
-      /* 当用户下滑超过 header，我们隐藏导航栏，并修改它的样式为白底黑字 */
-      top: -69.2px;
-      position: fixed;
-      border-bottom: 1px solid $white;
-      background-color: rgba(255, 255, 255, 0.95);
-      transition: transform 0.2s;
-
-      .navbar-brand,
-      .navbar-nav > li.nav-item > a {
-        color: $gray-900;
-      }
-    }
-
-    &.is-visible {
-      /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
-      因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
-      transform: translate3d(0, 100%, 0);
-      animation-iteration-count: 1;
-    }
-  }
-}
-
-header {
-  &.masthead {
-    margin-bottom: 50px;
-    background: #868e96 no-repeat scroll center center;
-    position: relative;
-    background-size: cover;
-    width: 100%;
-    height: 520px;
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #212529;
-      opacity: 0.5;
-    }
-
-    .post-heading,
-    .site-heading {
-      color: $white;
-      text-align: center;
-    }
-
-    .site-heading {
-      padding-top: 200px;
-
-      h1 {
-        font-weight: bolder;
-      }
-
-      .subheading {
-        display: block;
-        padding-top: 30px;
-        font-size: 20px;
-        font-weight: lighter;
-      }
-    }
-  }
-}
-
-.shadow-hover:hover {
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  border-color: rgba(223, 225, 229, 0);
-}
-
-.widget {
-  opacity: .85;
-  border-top: 2px solid $primary;
-  background-color: darken($color: $white, $amount: 1%);
-
-  .widget-title {
-    color: darken($color: $primary, $amount: 5%);
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0;
-    padding-bottom: 8px;
-  }
-
-  ul {
-    padding-left: 0;
-    list-style: none;
-
-    li {
-      border-bottom: 1px solid #ddd;
-      padding: 0.5rem 0;
-      margin-bottom: -1px;
-      font-size: small;
-
-      a {
-        color: #222;
-        transition: color .2s ease;
-
-        &:hover {
-          color: $primary;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-}
-
-section#search {
-  padding: 0;
-  border-top: none;
-}
-
-.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
-  background: #fff;
-  border: none transparent;
-  box-shadow: none;
-}
-
-aside section {
-  background-color: $white;
-}
-
-/*--------------------------------------------------------------
-Utils
---------------------------------------------------------------*/
 .gray7 {
   color: $gray-700;
 }
@@ -273,39 +39,6 @@ Utils
 
 .focus-shadow {
   box-shadow: $focus-shadow;
-}
-
-/*--------------------------------------------------------------
- animation
---------------------------------------------------------------*/
-@keyframes colorCycle {
-  0% {
-    color: #228be6;
-  }
-  12.5% {
-    color: #12b886;
-  }
-  25% {
-    color: #40c057;
-  }
-  37.5% {
-    color: #ffd43b;
-  }
-  50% {
-    color: #fd7e14;
-  }
-  62.5% {
-    color: #fa5252;
-  }
-  75% {
-    color: #f783ac;
-  }
-  87.5% {
-    color: #7950f2;
-  }
-  100% {
-    color: #228be6;
-  }
 }
 
 .foot-main {

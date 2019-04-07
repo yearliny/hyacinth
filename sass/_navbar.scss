@@ -1,0 +1,101 @@
+#site-navigation {
+  position: absolute;
+  background-color: $white;
+
+  a.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  ul.navbar-nav li.nav-item > a {
+    opacity: .7;
+    color: $gray-900;
+    font-weight: 500;
+    font-family: "Microsoft YaHei UI Light", Arial, serif;
+    transition: opacity .2s ease;
+
+    &:focus, &:hover, &.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (min-width: map-get($map: $grid-breakpoints, $key: lg)) {
+    // 桌面端的显示效果
+    background: transparent;
+
+    .navbar-brand {
+      color: $white;
+      padding: 10px 20px;
+    }
+
+    ul.navbar-nav > li.nav-item > a {
+      color: $white;
+      padding: 10px 0 10px;
+      margin: 0 20px;
+    }
+
+    &.is-fixed {
+      /* 当用户下滑超过 header，我们隐藏导航栏，并修改它的样式为白底黑字 */
+      top: -69.2px;
+      position: fixed;
+      border-bottom: 1px solid $white;
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: transform 0.2s;
+
+      .navbar-brand,
+      .navbar-nav > li.nav-item > a {
+        color: $gray-900;
+      }
+    }
+
+    &.is-visible {
+      /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
+      因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
+      transform: translate3d(0, 100%, 0);
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+header {
+  &.masthead {
+    margin-bottom: 50px;
+    background: #868e96 no-repeat scroll center center;
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 520px;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #212529;
+      opacity: 0.5;
+    }
+
+    .post-heading,
+    .site-heading {
+      color: $white;
+      text-align: center;
+    }
+
+    .site-heading {
+      padding-top: 200px;
+
+      h1 {
+        font-weight: bolder;
+      }
+
+      .subheading {
+        display: block;
+        padding-top: 30px;
+        font-size: 20px;
+        font-weight: lighter;
+      }
+    }
+  }
+}

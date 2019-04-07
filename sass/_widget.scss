@@ -1,0 +1,51 @@
+.widget {
+  opacity: .85;
+  border-top: 2px solid $primary;
+  background-color: darken($color: $white, $amount: 1%);
+
+  .widget-title {
+    color: darken($color: $primary, $amount: 5%);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    padding-bottom: 8px;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0;
+      margin-bottom: -1px;
+      font-size: small;
+
+      a {
+        color: #222;
+        transition: color .2s ease;
+
+        &:hover {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
+
+section#search {
+  padding: 0;
+  border-top: none;
+}
+
+.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
+  background: #fff;
+  border: none transparent;
+  box-shadow: none;
+}
+
+aside section {
+  background-color: $white;
+}
