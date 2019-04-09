@@ -38,17 +38,14 @@
   }
 }
 
-section#search {
-  padding: 0;
-  border-top: none;
+section#search:hover {
+  @include box-shadow();
 }
 
+// 清除按钮原有样式
 .btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
-  background: #fff;
-  border: none transparent;
+  background: $white;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
-}
-
-aside section {
-  background-color: $white;
 }

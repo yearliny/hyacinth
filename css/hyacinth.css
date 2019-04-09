@@ -9694,8 +9694,12 @@ h3 {
 #site-navigation ul.navbar-nav li.nav-item > a {
   opacity: 0.7;
   color: #212529;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  #site-navigation ul.navbar-nav li.nav-item > a {
+    transition: none;
+  }
 }
 #site-navigation ul.navbar-nav li.nav-item > a:focus, #site-navigation ul.navbar-nav li.nav-item > a:hover, #site-navigation ul.navbar-nav li.nav-item > a.active {
   opacity: 1;
@@ -9752,8 +9756,8 @@ header.masthead .site-heading {
 header.masthead .site-heading .subheading {
   display: block;
   padding-top: 30px;
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 /*--------------------------------------------------------------
@@ -9788,15 +9792,16 @@ header.masthead .site-heading .subheading {
     color: #228be6;
   }
 }
-footer > .container-fluid {
+footer.site-footer {
   position: absolute;
+  width: 100%;
   background-color: #fff;
 }
-footer > .container-fluid a {
+footer.site-footer a {
   color: #495057;
   transition: color 0.2s ease;
 }
-footer > .container-fluid a:hover {
+footer.site-footer a:hover {
   color: #212529;
 }
 
@@ -9837,19 +9842,11 @@ footer > .container-fluid a:hover {
   padding: 0.5rem 0;
 }
 
-section#search {
-  padding: 0;
-  border-top: none;
-}
-
 .btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
   background: #fff;
-  border: none transparent;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
-}
-
-aside section {
-  background-color: #fff;
 }
 
 /*# sourceMappingURL=hyacinth.css.map */
