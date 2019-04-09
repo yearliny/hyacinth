@@ -1,3 +1,7 @@
+@import "../vendor/bootstrap/scss/functions";
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/mixins";
+
 #site-navigation {
   position: absolute;
   background-color: $white;
@@ -11,91 +15,77 @@
     opacity: .7;
     color: $gray-900;
     font-weight: 500;
-    font-family: "Microsoft YaHei UI Light", Arial, serif;
     transition: opacity .2s ease;
 
     &:focus, &:hover, &.active {
       opacity: 1;
-      font-weight: 600;
     }
   }
 
-  @media screen and (min-width: map-get($map: $grid-breakpoints, $key: lg)) {
-    // 桌面端的显示效果
+  /*
+    桌面端的导航栏显示效果：顶端时透明，字体为白色。下滑时向上隐藏，然后上划出现，显示白底黑字
+   */
+  @include media-breakpoint-up(lg) {
     background: transparent;
 
     .navbar-brand {
       color: $white;
-      padding: 10px 20px;
+      margin-left: 20px;
     }
 
     ul.navbar-nav > li.nav-item > a {
       color: $white;
-      padding: 10px 0 10px;
-      margin: 0 20px;
+      padding: 10px;
     }
 
+    /* 当用户下滑超过 header，隐藏导航栏，并修改它的样式为白底黑字 */
     &.is-fixed {
-      /* 当用户下滑超过 header，我们隐藏导航栏，并修改它的样式为白底黑字 */
-      top: -69.2px;
+      top: -67px;
       position: fixed;
-      border-bottom: 1px solid $white;
+      //border-bottom: 1px solid $white;
       background-color: rgba(255, 255, 255, 0.95);
-      transition: transform 0.2s;
+      transition: transform .2s ease-out;
 
-      .navbar-brand,
-      .navbar-nav > li.nav-item > a {
+      .navbar-brand, ul.navbar-nav > li.nav-item > a {
         color: $gray-900;
       }
     }
 
+    /* 导航栏向下移动相当于自己高度的距离，因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离 */
     &.is-visible {
-      /* translate3d(0, 100%, 0)，Y轴数值为100%，相当于容器向下移动相当于自己高度的距离，
-      因为之前 .is-fixed 刚好向上移动了相当于自己高度的距离*/
-      transform: translate3d(0, 100%, 0);
-      animation-iteration-count: 1;
+      transform: translateY(100%);
     }
   }
 }
 
-header {
-  &.masthead {
-    margin-bottom: 50px;
-    background: #868e96 no-repeat scroll center center;
-    position: relative;
-    background-size: cover;
+header.masthead {
+  margin-bottom: 50px;
+  background: #868e96 no-repeat scroll center center;
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 520px;
+
+  // 封面遮罩
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    height: 520px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #212529;
-      opacity: 0.5;
-    }
+  .site-heading {
+    color: $white;
+    text-align: center;
+    padding-top: 200px;
 
-    .post-heading,
-    .site-heading {
-      color: $white;
-      text-align: center;
-    }
-
-    .site-heading {
-      padding-top: 200px;
-
-      h1 {
-        font-weight: bolder;
-      }
-
-      .subheading {
-        display: block;
-        padding-top: 30px;
-        font-size: 20px;
-        font-weight: lighter;
-      }
+    .subheading {
+      display: block;
+      padding-top: 30px;
+      font-size: 20px;
+      font-weight: lighter;
     }
   }
 }

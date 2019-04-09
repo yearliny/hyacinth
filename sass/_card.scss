@@ -1,24 +1,54 @@
-.post, .widget {
-  background-color: $white;
-  margin: 0 0 2rem;
-  padding: 20px 20px 15px;
-  border-radius: 0;
-  border: none;
-  box-shadow: $common-shadow;
-}
-
-.post {
-  .post-title a {
+.card {
+  .card-title > a, li > a {
     color: $gray-900;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 1.6;
-    transition: color .2s ease;
+    @include transition;
 
     &:hover {
-      font-weight: 500;
-      color: #406599;
+      color: $primary;
       text-decoration: none;
     }
   }
+
+  h2.card-title {
+    font-size: $h4-font-size;
+  }
+}
+
+.card.widget {
+  padding: 0;
+  opacity: 0.85;
+
+  .card-title {
+    font-size: $font-size-base;
+  }
+
+  .card-body {
+    padding: 1.25rem 1.25rem 0;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      font-size: $font-size-sm;
+      border-bottom: 1px solid $gray-300;
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+section#search {
+  padding: 0;
+  border-top: none;
+}
+
+.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
+  background: #fff;
+  border: none transparent;
+  box-shadow: none;
+}
+
+aside section {
+  background-color: $white;
 }
