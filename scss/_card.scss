@@ -1,5 +1,5 @@
 .card {
-  .card-title > a, li > a {
+  .card-title a, li a {
     color: $gray-900;
     @include transition;
 
@@ -9,43 +9,42 @@
     }
   }
 
-  h2.card-title {
+  .card-title {
     font-size: $h4-font-size;
+    font-weight: $font-weight-normal;
   }
 }
 
 .card.widget {
   padding: 0;
-  opacity: 0.85;
 
-  .card-title {
-    font-size: $font-size-base;
+  li a {
+    color: $gray-700;
+    @include transition;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
   }
 
   .card-body {
     padding: 1.25rem 1.25rem 0;
-  }
 
-  ul {
-    padding-left: 0;
-    list-style: none;
-
-    li {
-      font-size: $font-size-sm;
-      border-bottom: 1px solid $gray-300;
-      padding: 0.5rem 0;
+    .card-title {
+      font-size: $font-size-base;
     }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        font-size: $font-size-sm;
+        border-bottom: 1px solid $gray-300;
+        padding: 0.5rem 0;
+      }
+    }
+
   }
-}
-
-section#search:hover {
-  @include box-shadow();
-}
-
-// 清除按钮原有样式
-.btn-search, .btn-search.form-control, .btn-search:hover, .btn-search:active .btn-search:focus, .btn-light:not(:disabled):not(.disabled):active {
-  background: $white;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
 }

@@ -4,11 +4,11 @@ footer.site-footer {
   background-color: $white;
 
   a {
-    color: $gray-700;
-    transition: color .2s ease;
+    color: $dark;
+    transition: color .2s ease-in-out;
 
     &:hover {
-      color: $gray-900;
+      color: lighten($dark, 10%);
     }
   }
 }
