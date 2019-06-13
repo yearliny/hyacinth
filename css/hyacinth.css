@@ -9826,4 +9826,12 @@ footer.site-footer a:hover {
   padding: 0.5rem 0;
 }
 
+article .entry-header h1 {
+  font-size: 1.7rem;
+}
+article .entry-header .entry-meta {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
 /*# sourceMappingURL=hyacinth.css.map */

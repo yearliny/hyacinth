@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>面向新手的V2Ray搭建指南 – yearliny</title>
+    <title>yearliny - Thought, story and ideas.</title>
 
     <link rel="icon" href="img/favicon.ico">
     <link href="css/hyacinth.css" rel="stylesheet">
@@ -24,12 +24,12 @@
     <link href="vendor/fontawesome/css/all.min.css" media="all" rel="stylesheet">
 </head>
 
-<body class="gray7 bg-gray0">
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="site-navigation">
     <div class="container-fluid">
         <img alt="logo" src="img/logo.png" width="50">
-        <a href="#" class="navbar-brand">yearliny</a>
+        <a href="#" class="navbar-brand ml-3">yearliny</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggler">
             <i class="navbar-toggler-icon"></i>
         </button>
@@ -43,13 +43,13 @@
     </div>
 </nav>
 
-<header class="masthead shadow-sm" style="background-image: url(img/home-bg.jpg)">
+<header class="masthead shadow-sm mb-5" style="background-image: url(img/Writing.jpg)">
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1 class="display-1 font-weight-bolder">yearliny</h1>
+                    <h1 class="display-1 font-weight-bolder mb-4">yearliny</h1>
                     <span class="subheading">Thought, story and ideas.</span>
                 </div>
             </div>
@@ -60,43 +60,39 @@
 <div class="container" id="main">
     <div class="row">
         <div class="col-lg-8">
-
-            <article id="1" class="bg-white p-4">
-                <div class="entry-header">
-                    <div class="entry-meta"></div>
+            <article id="1" class="bg-white shadow p-4 mb-4">
+                <div class="entry-header mb-3">
+                    <div class="entry-meta"><span class="mr-2">2019年6月10日</span><span>由风逝发表</span></div>
                     <h1>面向新手的V2Ray搭建指南</h1>
                 </div>
                 <div class="entry-content">
-                    <p>介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
-                    <p>介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
-                    <p>介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
+                    <p>
+                        介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
+                    <p>
+                        介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
+                    <p>
+                        介绍前，先说下背景。在前端开发中，有时会为页面绑定resize事件，或者为一个页面元素绑定拖拽事件（其核心就是绑定mousemove），这种事件有一个特点，就是用户不必特地捣乱，他在一个正常的操作中，都有可能在一个短的时间内触发非常多次事件绑定程序。而大家知道，DOM操作时很消耗性能的，这个时候，如果你为这些事件绑定一些操作DOM节点的操作的话，那就会引发大量的计算，在用户看来，页面可能就一时间没有响应，这个页面一下子变卡了变慢了。甚至在IE下，如果你绑定的resize事件进行较多DOM操作，其高频率可能直接就使得浏览器崩溃。</p>
                 </div>
                 <footer class="entry-footer"></footer>
             </article>
-
-            <nav class="clearfix my-3">
+            <nav class="clearfix">
                 <a class="btn btn-outline-dark float-left" href="#"><i class="fas fa-chevron-left"></i> Last
                     Posts</a>
-                <a class="btn btn-outline-dark float-right" href="#">Older Posts <i
-                        class="fas fa-chevron-right "></i></a>
+                <a class="btn btn-outline-dark float-right" href="#">Older Posts <i class="fas fa-chevron-right "></i></a>
             </nav>
-
         </div>
         <!-- 侧边栏 -->
         <aside class="col-lg-4">
 
-            <section id="search">
-                <div class="input-group mb-4">
-                    <input type="text" class="form-control btn-light btn-search" id="search-field" placeholder="Search..." aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-light btn-search" title="Search" type="button"><i class="fas fa-search text-primary"></i></button>
-                    </div>
+            <section class="card widget shadow mb-4">
+                <div class="progress">
+                    <div class="progress-bar bg-dark" style="width: 35%"></div>
+                    <div class="progress-bar bg-primary" style="width: 25%"></div>
+                    <div class="progress-bar bg-warning" style="width: 20%"></div>
+                    <div class="progress-bar bg-danger" style="width: 20%"></div>
                 </div>
-            </section>
-
-            <section class="card widget shadow border-top border-primary mb-4">
                 <div class="card-body">
-                    <h2 class="card-title text-primary"><i class="far fa-sticky-note mr-1"></i>近期文章</h2>
+                    <h2 class="card-title"><i class="far fa-sticky-note mr-1"></i>近期文章</h2>
                     <ul>
                         <li>
                             <a href="#">使用Win10内置SSH客户端</a>
@@ -117,9 +113,15 @@
                 </div>
             </section>
 
-            <section class="card widget shadow border-top border-primary mb-4">
+            <section class="card widget shadow mb-4">
+                <div class="progress">
+                    <div class="progress-bar bg-dark" style="width: 35%"></div>
+                    <div class="progress-bar bg-primary" style="width: 25%"></div>
+                    <div class="progress-bar bg-warning" style="width: 20%"></div>
+                    <div class="progress-bar bg-danger" style="width: 20%"></div>
+                </div>
                 <div class="card-body">
-                    <h2 class="card-title text-primary"><i class="far fa-folder mr-1"></i>分类目录</h2>
+                    <h2 class="card-title"><i class="far fa-folder mr-1"></i>分类目录</h2>
                     <ul>
                         <li><a href="#">健康生活</a>
                         </li>
@@ -135,9 +137,15 @@
                 </div>
             </section>
 
-            <section class="card widget shadow border-top border-primary mb-4">
+            <section class="card widget shadow mb-4">
+                <div class="progress">
+                    <div class="progress-bar bg-dark" style="width: 35%"></div>
+                    <div class="progress-bar bg-primary" style="width: 25%"></div>
+                    <div class="progress-bar bg-warning" style="width: 20%"></div>
+                    <div class="progress-bar bg-danger" style="width: 20%"></div>
+                </div>
                 <div class="card-body">
-                    <h2 class="card-title text-primary"><i class="far fa-calendar-alt mr-1"></i>文章归档</h2>
+                    <h2 class="card-title"><i class="far fa-calendar-alt mr-1"></i>文章归档</h2>
                     <ul>
                         <li><a href="https://yuan.ga/2018/07/">2018年七月</a></li>
                         <li><a href="https://yuan.ga/2018/06/">2018年六月</a></li>
